@@ -28,7 +28,7 @@ function pickArticleList(articleList) {
 		content += '<div class="blogTimeIcon"></div>';
 		content += '<div class="blogTimeLabel" data-scroll-reveal="enter right over 1s" >';
 		content += '<h2>' + article.title + '</h2><p>' + article.preview + '</p>';
-		content += '<a href="${root}/article/' + article.year + '/' + article.month + '/' + article.code + '}" class="readmore">阅读全文&gt;&gt;</a></div></li>';
+		content += '<a href="${root}/article/' + article.year + '/' + article.month + '/' + article.code + '" class="readmore">阅读全文&gt;&gt;</a></div></li>';
 	}
 	blogTimeUL.html(content);
 }
