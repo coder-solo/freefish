@@ -1,0 +1,152 @@
+@charset "utf-8";
+/* about */
+.memorial_day {
+	overflow: hidden;
+	position: relative;
+	padding: 60px;
+}
+
+.time_axis {
+	background: #00ff00;
+	height: 6px;
+	width: 100%;
+	animation: time_a 5s;
+	-moz-animation: time_a 5s; /* Firefox */
+	-webkit-animation: time_a 5s; /* Safari and Chrome */
+	-o-animation: time_a 5s; /* Opera */
+}
+/*时间轴动画效果*/
+@keyframes time_a { 0% {
+width:0px;
+}
+25% {
+width:250px;
+}
+50% {
+width:500px;
+}
+100% {
+width:840px;
+}
+}
+@-moz-keyframes time_a /* Firefox */ { 0% {
+width:0px;
+}
+25% {
+width:250px;
+}
+50% {
+width:500px;
+}
+100% {
+width:840px;
+}
+}
+@-webkit-keyframes time_a /* Safari and Chrome */ { 0% {
+width:0px;
+}
+25% {
+width:250px;
+}
+50% {
+width:500px;
+}
+100% {
+width:840px;
+}
+}
+@-o-keyframes time_a /* Opera */ { 0% {
+width:0px;
+}
+25% {
+width:250px;
+}
+50% {
+width:500px;
+}
+100% {
+width:840px;
+}
+}
+
+.dateview {
+	position: absolute;
+	top: -50px;
+	left: 20px;
+	display: block;
+	width: 88px;
+	background: url(../images/about/dtime.png) no-repeat;
+	color: #f3f0e1;
+	height: 46px;
+	line-height: 30px;
+	text-align: center
+}
+
+.memorial_day {
+	margin-top: 50px;
+}
+
+.memorial_day ul li span {
+	margin-top: 30px;
+	display: block;
+}
+
+.memorial_day ul li::before {
+	content: "";
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	position: absolute;
+	background: #FF8000;
+	border: 3px solid #e9f6fb;
+}
+
+.memorial_day ul li:hover::before {
+	background: #00ff00;
+	border: 3px solid #e9f6fb;
+}
+
+.memorial_day ul li {
+	position: absolute;
+	top: 54px;
+}
+
+.memorial_day ul li.n1 {
+	left: 90px
+}
+
+.memorial_day ul li.n2 {
+	left: 250px
+}
+
+.memorial_day ul li.n3 {
+	left: 410px
+}
+
+.memorial_day ul li.n4 {
+	left: 600px
+}
+
+.about {
+	width: 90%;
+	margin: 30px auto;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+.about h2 {
+	font-size: 18px;
+	margin-bottom: 16px;
+	background: #F9B770;
+	padding: 6px 0;
+	width: 150px;
+	text-align: center;
+	border-radius: 0 15px 15px 0;
+	box-shadow: #21566f 1px 1px 1px;
+	border-left: #dae1e4 6px solid;
+	color: #f3f0e1;
+}
+
+.about p {
+	margin-bottom: 20px
+}

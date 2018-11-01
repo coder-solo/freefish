@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="article">
+
+	<resultMap id="articleMap" class="com.ken.domain.Article">
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="code" column="code" />
+		<result property="file" column="file" />
+		<result property="preview" column="preview" />
+		<result property="year" column="year" />
+		<result property="month" column="month" />
+		<result property="day" column="day" />
+		<result property="time" column="time" />
+		<result property="categoryId" column="category_id" />
+		<result property="tags" column="tags" />
+		<result property="createTime" column="create_time" />
+		<result property="updateTime" column="update_time" />
+	</resultMap>
+
+	<select id="getArticles" resultMap="articleMap" parameterClass="java.lang.String">
+		SELECT
+			id,
+			code,
+			title,
+			file,
+			preview,
+			year,
+			month,
+			day,
+			time,
+			category_id,
+			tags,
+			create_time,
+			update_time
+		FROM
+			article
+			<dynamic prepend="WHERE">
+				<isNotEmpty prepend="AND" property="value">
+					category_id = #value#
+				</isNotEmpty>
+			</dynamic>
+		ORDER BY
+			id DESC
+	</select>
+
+	<select id="getArticleByCode" resultMap="articleMap">
+		SELECT
+			id,
+			code,
+			title,
+			file,
+			preview,
+			year,
+			month,
+			day,
+			time,
+			category_id,
+			tags,
+			create_time,
+			update_time
+		FROM
+			article
+		WHERE
+			code = #code#
+	</select>
+</sqlMap>
